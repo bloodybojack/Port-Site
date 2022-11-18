@@ -1,10 +1,14 @@
-body {
+html {
     font-size: 14px;
+}
+
+body {
     color: #1c1c1c;
     margin: 0px;
     background-color:antiquewhite;
     font-family: 'Lora', serif;
-    opacity: 0;
+    opacity: 1;
+    text-align: center;
     transition: opacity 1.5s;
 }
 
@@ -104,11 +108,32 @@ main {
 .project_box {
     box-sizing: border-box;
     position: relative;
+    aspect-ratio: 1 / 1;
     width: 50%;
     text-align: left;
     border-right: 1px #1c1c1c solid;
     border-bottom: 1px #1c1c1c solid;
 }
+/* 1000 or less screens */
+@media only screen and (max-width: 1000px) {
+    main {
+        width: 95%;
+    }
+    #projects {
+        border: 1px #1c1c1c solid;
+    }
+    .project_box {
+        aspect-ratio: none;
+        width: 100%;
+        aspect-ratio: 2 / 1;
+        border: none;
+        border-bottom: 1px #1c1c1c solid;
+    }
+    .project_box:last-child {
+        border-bottom: 0px;
+    }   
+}
+
 .unhide_box {
     display: flex;
     flex-direction: column;
@@ -174,10 +199,16 @@ main {
     justify-content: center;
     align-items: center;
     border: none;
+    transition: color .2s, background-color .2s;
 }
 #empty h2 {
     font-weight: 500;
     letter-spacing: 0px;
+}
+#empty:hover {
+    background-color: #1c1c1c;
+    color: antiquewhite;
+    transition: color .2s, background-color .2s;
 }
 
 
@@ -230,16 +261,28 @@ svg {
     align-items: center;
     margin: 10rem auto;
     text-align: center;
-    background-color: #1c1c1c;
-    color: antiquewhite;
+    background-color: antiquewhite;
+    color: #1c1c1c;
     padding: 1rem 2rem;
     border-radius: 100px;
+    border: 1px solid #1c1c1c;
+    transition: color .2s, background-color .2s;
 }
 #contact svg {
-    fill: antiquewhite;
+    fill: #1c1c1c;
+    transition: fill .4s;
 }
 #contact h3 {
     margin-left: 1rem;
+}
+#contact:hover {
+    background-color: #1c1c1c;
+    color: antiquewhite;
+    transition: color .2s, background-color .2s;
+}
+#contact:hover > svg {
+    fill: antiquewhite;
+    transition: fill .4s;
 }
 
 
@@ -262,3 +305,4 @@ footer p {
         color:antiquewhite;
     }
 }
+
